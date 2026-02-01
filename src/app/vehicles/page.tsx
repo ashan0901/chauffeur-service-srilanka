@@ -9,21 +9,21 @@ import Image from "next/image";
 const vehicles = [
   {
     id: 1,
-    name: "Toyota Prius",
-    model: "Toyota Prius 2018",
+    name: "Toyota Premio G - Superior 2014",
+    model: "Toyota",
     image: "/images/vehicle-1.jpg",
     capacity: "4 Passengers",
     ac: "Yes (Dual Zone)",
     luggage: "2 Large Suitcases + 2 Small Bags",
-    features: ["Hybrid Engine", "Fuel Efficient", "Smooth Ride", "Low Noise"],
+    features: ["Fuel Efficient", "Smooth Ride", "Low Noise", "Super Comfort"],
     ideal: "Ideal for couples & small families",
     safety:
-      "Full insurance coverage, regular maintenance, safety features including ABS, EBD, and airbags",
+      "Full insurance coverage, regular maintenance, safety features including EBD, and airbags",
   },
   {
     id: 2,
-    name: "Toyota Corolla",
-    model: "Toyota Corolla 2020",
+    name: "Honda Vezel - Hybrid SUV 2015",
+    model: "Honda Vezel 2015",
     image: "/images/vehicle-2.jpg",
     capacity: "4 Passengers",
     ac: "Yes (Dual Zone)",
