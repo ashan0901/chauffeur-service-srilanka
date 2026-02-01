@@ -189,7 +189,7 @@ export default function Footer() {
                   href="tel:+94771234567"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  +94 77 123 4567
+                  +94 77 967 8677
                 </a>
               </li>
               <li className="flex items-center gap-2">
@@ -208,10 +208,10 @@ export default function Footer() {
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 <a
-                  href="mailto:info@srilankachauffeur.com"
+                  href="mailto:tiranmusic.lk@gmail.com"
                   className="hover:text-primary-400 transition-colors"
                 >
-                  info@srilankachauffeur.com
+                  tiranmusic.lk@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2">

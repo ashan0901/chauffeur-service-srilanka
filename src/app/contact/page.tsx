@@ -105,7 +105,7 @@ export default function ContactPage() {
                       href="tel:+94771234567"
                       className="text-primary-600 hover:text-primary-700"
                     >
-                      +94 77 123 4567
+                      +94 77 967 8677
                     </a>
                     <p className="text-sm text-gray-500">Available 24/7</p>
                   </div>
@@ -131,10 +131,10 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a
-                      href="mailto:info@srilankachauffeur.com"
+                      href="mailto:tiranmusic.lk@gmail.com"
                       className="text-primary-600 hover:text-primary-700"
                     >
-                      info@srilankachauffeur.com
+                      tiranmusic.lk@gmail.com
                     </a>
                     <p className="text-sm text-gray-500">
                       We'll respond within 24 hours
