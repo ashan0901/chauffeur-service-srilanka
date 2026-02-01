@@ -1,0 +1,36 @@
+{
+  "tourPackages": [
+    {
+      "id": 1,
+      "image": "/images/tour-colombo.jpg"
+    },
+    {
+      "id": 2,
+      "image": "/images/tour-sigiriya.jpg"
+    },
+    {
+      "id": 3,
+      "image": "/images/tour-kandy.jpg"
+    },
+    {
+      "id": 4,
+      "image": "/images/tour-ella.jpg"
+    },
+    {
+      "id": 5,
+      "image": "/images/tour-galle.jpg"
+    },
+    {
+      "id": 6,
+      "image": "/images/tour-7days.jpg"
+    },
+    {
+      "id": 7,
+      "image": "/images/tour-10days.jpg"
+    },
+    {
+      "id": 8,
+      "image": "/images/tour-custom.jpg"
+    }
+  ]
+}
