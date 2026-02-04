@@ -1,61 +1,35 @@
-export const metadata = {
-  title: "Gallery | Professional Chauffeur Service Sri Lanka",
-  description:
-    "View our gallery featuring our vehicles, tourist destinations, and memorable tour moments in Sri Lanka.",
-};
+"use client";
 
-const galleryItems = [
-  { id: 1, category: "cars", title: "Toyota Prius", location: "Colombo" },
-  {
-    id: 2,
-    category: "places",
-    title: "Sigiriya Rock",
-    location: "Cultural Triangle",
-  },
-  {
-    id: 3,
-    category: "tours",
-    title: "Tea Plantations",
-    location: "Nuwara Eliya",
-  },
-  {
-    id: 4,
-    category: "places",
-    title: "Galle Fort",
-    location: "Southern Coast",
-  },
-  { id: 5, category: "cars", title: "Toyota Corolla", location: "Colombo" },
-  { id: 6, category: "tours", title: "Whale Watching", location: "Mirissa" },
-  { id: 7, category: "places", title: "Nine Arch Bridge", location: "Ella" },
-  { id: 8, category: "tours", title: "Safari Tour", location: "Yala" },
-  {
-    id: 9,
-    category: "places",
-    title: "Dambulla Cave Temple",
-    location: "Dambulla",
-  },
-  {
-    id: 10,
-    category: "tours",
-    title: "Temple of the Tooth",
-    location: "Kandy",
-  },
-  {
-    id: 11,
-    category: "places",
-    title: "Adam's Peak",
-    location: "Central Highlands",
-  },
-  {
-    id: 12,
-    category: "tours",
-    title: "Village Experience",
-    location: "Sigiriya",
-  },
-];
+import { useState } from "react";
+import Image from "next/image";
+import galleryData from "@/data/gallery.json";
+
+interface GalleryItem {
+  id: number;
+  category: string;
+  title: string;
+  location: string;
+  image: string;
+}
+
+interface FeaturedDestination {
+  name: string;
+  image: string;
+}
 
 export default function GalleryPage() {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const galleryItems: GalleryItem[] = galleryData.galleryItems;
+  const featuredDestinations: FeaturedDestination[] =
+    galleryData.featuredDestinations;
+
   const categories = ["all", "cars", "places", "tours"];
+
+  const filteredItems =
+    activeCategory === "all"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeCategory);
 
   return (
     <>
@@ -77,8 +51,9 @@ export default function GalleryPage() {
             {categories.map((category) => (
               <button
                 key={category}
+                onClick={() => setActiveCategory(category)}
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  category === "all"
+                  activeCategory === category
                     ? "bg-primary-600 text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-primary-100 hover:text-primary-600"
                 }`}
@@ -90,41 +65,21 @@ export default function GalleryPage() {
 
           {/* Gallery Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.map((item) => (
+            {filteredItems.map((item) => (
               <div
                 key={item.id}
                 className="card overflow-hidden group cursor-pointer"
               >
-                <div className="relative h-64 bg-gradient-to-br from-gray-200 to-gray-300">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="64"
-                        height="64"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-gray-400 mx-auto mb-2"
-                      >
-                        <rect
-                          x="3"
-                          y="3"
-                          width="18"
-                          height="18"
-                          rx="2"
-                          ry="2"
-                        />
-                        <circle cx="8.5" cy="8.5" r="1.5" />
-                        <polyline points="21 15 16 10 5 21" />
-                      </svg>
-                      <p className="text-gray-500 font-medium">{item.title}</p>
-                      <p className="text-sm text-gray-400">{item.location}</p>
-                    </div>
-                  </div>
+                <div className="relative h-64 w-full bg-gradient-to-br from-gray-200 to-gray-300">
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  )}
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div className="text-white text-center">
@@ -149,38 +104,23 @@ export default function GalleryPage() {
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { name: "Sigiriya", image: "sigiriya" },
-              { name: "Nuwara Eliya", image: "nuwara-eliya" },
-              { name: "Galle", image: "galle" },
-              { name: "Ella", image: "ella" },
-              { name: "Kandy", image: "kandy" },
-              { name: "Mirissa", image: "mirissa" },
-              { name: "Dambulla", image: "dambulla" },
-              { name: "Trincomalee", image: "trinco" },
-            ].map((dest, index) => (
+            {featuredDestinations.map((dest, index) => (
               <div
                 key={index}
                 className="card overflow-hidden group cursor-pointer"
               >
-                <div className="h-32 bg-gradient-to-br from-primary-200 to-primary-300 flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-primary-600"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+                <div className="relative h-32 bg-gradient-to-br from-primary-200 to-primary-300">
+                  {dest.image && (
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  )}
                 </div>
-                <div className="p-3 text-center">
+                <div className="p-3 text-center bg-white">
                   <p className="font-medium text-sm">{dest.name}</p>
                 </div>
               </div>
@@ -200,7 +140,7 @@ export default function GalleryPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"

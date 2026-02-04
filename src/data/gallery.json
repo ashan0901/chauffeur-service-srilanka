@@ -1,0 +1,98 @@
+{
+  "galleryItems": [
+    {
+      "id": 1,
+      "category": "cars",
+      "title": "Toyota Prius",
+      "location": "Colombo",
+      "image": "/images/vehicle-1.jpg"
+    },
+    {
+      "id": 2,
+      "category": "places",
+      "title": "Sigiriya Rock",
+      "location": "Cultural Triangle",
+      "image": "/images/tour-sigiriya.jpg"
+    },
+    {
+      "id": 3,
+      "category": "tours",
+      "title": "Tea Plantations",
+      "location": "Nuwara Eliya",
+      "image": "/images/tour-kandy.jpg"
+    },
+    {
+      "id": 4,
+      "category": "places",
+      "title": "Galle Fort",
+      "location": "Southern Coast",
+      "image": "/images/tour-galle.jpg"
+    },
+    {
+      "id": 5,
+      "category": "cars",
+      "title": "Toyota Corolla",
+      "location": "Colombo",
+      "image": "/images/vehicle-2.jpg"
+    },
+    {
+      "id": 6,
+      "category": "tours",
+      "title": "Whale Watching",
+      "location": "Mirissa",
+      "image": "/images/tour-galle.jpg"
+    },
+    {
+      "id": 7,
+      "category": "places",
+      "title": "Nine Arch Bridge",
+      "location": "Ella",
+      "image": "/images/tour-ella.jpg"
+    },
+    {
+      "id": 8,
+      "category": "tours",
+      "title": "Safari Tour",
+      "location": "Yala",
+      "image": "/images/tour-7days.jpg"
+    },
+    {
+      "id": 9,
+      "category": "places",
+      "title": "Dambulla Cave Temple",
+      "location": "Dambulla",
+      "image": "/images/tour-sigiriya.jpg"
+    },
+    {
+      "id": 10,
+      "category": "tours",
+      "title": "Temple of the Tooth",
+      "location": "Kandy",
+      "image": "/images/tour-kandy.jpg"
+    },
+    {
+      "id": 11,
+      "category": "places",
+      "title": "Adam's Peak",
+      "location": "Central Highlands",
+      "image": "/images/tour-ella.jpg"
+    },
+    {
+      "id": 12,
+      "category": "tours",
+      "title": "Village Experience",
+      "location": "Sigiriya",
+      "image": "/images/tour-sigiriya.jpg"
+    }
+  ],
+  "featuredDestinations": [
+    { "name": "Sigiriya", "image": "/images/tour-sigiriya.jpg" },
+    { "name": "Nuwara Eliya", "image": "/images/tour-kandy.jpg" },
+    { "name": "Galle", "image": "/images/tour-galle.jpg" },
+    { "name": "Ella", "image": "/images/tour-ella.jpg" },
+    { "name": "Kandy", "image": "/images/tour-kandy.jpg" },
+    { "name": "Mirissa", "image": "/images/tour-galle.jpg" },
+    { "name": "Dambulla", "image": "/images/tour-sigiriya.jpg" },
+    { "name": "Trincomalee", "image": "/images/tour-7days.jpg" }
+  ]
+}

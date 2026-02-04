@@ -102,7 +102,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Phone</h3>
                     <a
-                      href="tel:+94771234567"
+                      href="tel:+94779678677"
                       className="text-primary-600 hover:text-primary-700"
                     >
                       +94 77 967 8677
@@ -217,7 +217,7 @@ export default function ContactPage() {
                       Chat with us directly on WhatsApp
                     </p>
                     <a
-                      href="https://wa.me/94771234567"
+                      href="https://wa.me/94779678677"
                       className="btn-whatsapp text-sm py-2 px-4 inline-flex"
                       target="_blank"
                       rel="noopener noreferrer"

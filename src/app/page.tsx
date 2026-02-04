@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import tourPackagesData from "@/data/tour-packages.json";
+import vehiclesData from "@/data/vehicles.json";
 import { getFeaturedReviews } from "@/lib/reviews";
 import { Review } from "@/lib/supabase";
 
-// Static data for the homepage
+// Features data
 const features = [
   {
     icon: (
@@ -73,6 +74,7 @@ const features = [
   },
 ];
 
+// Why Choose Us data
 const whyChooseUs = [
   {
     icon: (
@@ -154,70 +156,13 @@ const whyChooseUs = [
   },
 ];
 
-const vehicles = [
-  {
-    id: 1,
-    name: "Toyota Premio G Superiour 2014",
-    image: "/images/vehicle-1.jpg",
-    capacity: "4 Passengers",
-    ac: "Yes",
-    luggage: "3 Suitcases",
-    ideal: "Ideal for couples & small families",
-  },
-  {
-    id: 2,
-    name: "Honda Vezel Z Grade 2015",
-    image: "/images/vehicle-2.jpg",
-    capacity: "4 Passengers",
-    ac: "Yes",
-    luggage: "3 Suitcases",
-    ideal: "Perfect for small families & groups",
-  },
-];
+// Get featured vehicles from JSON
+const featuredVehicles = vehiclesData.vehicles.filter((v) =>
+  vehiclesData.featuredVehicles.includes(v.id),
+);
 
-const tourPackages = [
-  {
-    id: 1,
-    name: "Colombo City Tour",
-    duration: "1 Day",
-    places: [
-      "Gangaramaya Temple",
-      "National Museum",
-      "Galle Face Green",
-      "Old Parliament",
-    ],
-    price: "Contact for price",
-  },
-  {
-    id: 2,
-    name: "Kandy & Nuwara Eliya",
-    duration: "3 Days",
-    places: [
-      "Kandy City",
-      "Nuwara Eliya",
-      "Tea Plantations",
-      "Hakgala Gardens",
-    ],
-    price: "Contact for price",
-  },
-  {
-    id: 3,
-    name: "Sigiriya & Dambulla",
-    duration: "2 Days",
-    places: [
-      "Sigiriya Rock",
-      "Dambulla Cave Temple",
-      "Minneriya National Park",
-    ],
-    price: "Contact for price",
-  },
-];
-
-// Merge tour packages with images from JSON
-const tourPackagesWithImages = tourPackages.map((pkg) => {
-  const imageData = tourPackagesData.tourPackages.find((p) => p.id === pkg.id);
-  return { ...pkg, image: imageData?.image || "" };
-});
+// Get featured tour packages (first 3 from oneDayDrops)
+const featuredTourPackages = tourPackagesData.oneDayDrops.slice(0, 3);
 
 // Static fallback reviews (used when Supabase is not configured)
 const staticReviews: Review[] = [
@@ -291,14 +236,14 @@ export default async function HomePage() {
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-gray-100 max-w-3xl mx-auto leading-relaxed">
               Safe, comfortable & affordable travel for tourists exploring the
-              pearl of the Indian Ocean
+              pearl of the Indian ocean
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/book" className="btn-primary text-lg px-8 py-4">
                 Book Now
               </Link>
               <a
-                href="https://wa.me/94771234567"
+                href="https://wa.me/94779678677"
                 className="btn-whatsapp text-lg justify-center px-8 py-4"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -393,7 +338,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {vehicles.map((vehicle) => (
+            {featuredVehicles.map((vehicle) => (
               <div key={vehicle.id} className="card overflow-hidden">
                 <div className="relative h-64 w-full bg-gradient-to-br from-gray-200 to-gray-300">
                   <Image
@@ -488,7 +433,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {tourPackagesWithImages.map((pkg) => (
+            {featuredTourPackages.map((pkg) => (
               <div key={pkg.id} className="card overflow-hidden">
                 <div className="relative h-48 w-full bg-gradient-to-br from-primary-100 to-primary-200">
                   <Image
@@ -515,31 +460,75 @@ export default async function HomePage() {
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
-                    <span className="font-medium">{pkg.duration}</span>
+                    <span className="font-semibold text-primary-600">
+                      {pkg.duration}
+                    </span>
                   </div>
-                  <h3 className="font-semibold mb-2">{pkg.name}</h3>
-                  <ul className="text-sm text-gray-600 space-y-1 mb-4">
-                    {pkg.places.map((place, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="14"
-                          height="14"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                  <h3 className="text-xl font-bold mb-3">{pkg.name}</h3>
+                  <div className="mb-4">
+                    <h4 className="font-medium text-sm text-gray-900 mb-2">
+                      Places Covered:
+                    </h4>
+                    <ul className="space-y-1">
+                      {pkg.places.slice(0, 4).map((place, i) => (
+                        <li
+                          key={i}
+                          className="flex items-center gap-2 text-sm text-gray-600"
                         >
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                          <circle cx="12" cy="10" r="3" />
-                        </svg>
-                        {place}
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="text-gold-500 font-semibold">{pkg.price}</p>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                          </svg>
+                          {place}
+                        </li>
+                      ))}
+                      {pkg.places.length > 4 && (
+                        <li className="text-sm text-gray-500">
+                          + {pkg.places.length - 4} more places
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                  <div className="mb-4">
+                    <h4 className="font-medium text-sm text-gray-900 mb-1">
+                      Highlights:
+                    </h4>
+                    <div className="flex flex-wrap gap-1">
+                      {pkg.highlights.map((highlight, i) => (
+                        <span
+                          key={i}
+                          className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <p className="text-gold-500 font-bold text-lg">
+                      {pkg.price}
+                    </p>
+                    <a
+                      href={`https://wa.me/94779678677?text=I%20am%20interested%20in%20${encodeURIComponent(
+                        pkg.name,
+                      )}`}
+                      className="btn-whatsapp text-sm py-2 px-4"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Inquire Now
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -551,27 +540,24 @@ export default async function HomePage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="section-title">Customer Reviews</h2>
+            <h2 className="section-title">What Our Clients Say</h2>
             <p className="section-subtitle">
-              What our clients say about their experience with us
+              Read testimonials from our satisfied customers
             </p>
-            <Link href="/reviews" className="btn-secondary inline-block mt-4">
-              Read All Reviews
-            </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {displayReviews.map((review) => (
-              <div key={review.id} className="card p-6">
-                <div className="flex items-center gap-1 mb-3">
+              <div key={review.id} className="card p-8">
+                <div className="flex items-center gap-2 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <svg
                       key={i}
                       xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
-                      fill={i < review.rating ? "gold" : "none"}
-                      stroke="gold"
+                      fill={i < review.rating ? "#fbbf24" : "none"}
+                      stroke="#fbbf24"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -580,17 +566,17 @@ export default async function HomePage() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-4 italic">"{review.text}"</p>
-                <div className="flex items-center justify-between">
+                <p className="text-gray-600 mb-6 italic">"{review.text}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold">
+                    {review.name.charAt(0)}
+                  </div>
                   <div>
                     <p className="font-semibold">{review.name}</p>
-                    <p className="text-sm text-gray-500">{review.country}</p>
+                    <p className="text-sm text-gray-500">
+                      {review.country} • {review.tour}
+                    </p>
                   </div>
-                  {review.tour && (
-                    <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded">
-                      {review.tour}
-                    </span>
-                  )}
                 </div>
               </div>
             ))}
@@ -605,12 +591,11 @@ export default async function HomePage() {
             Ready to Explore Sri Lanka?
           </h2>
           <p className="text-xl text-gray-200 mb-8">
-            Book your chauffeur service today and experience the beauty of Sri
-            Lanka in comfort
+            Contact us today to plan your perfect Sri Lanka adventure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"
@@ -628,7 +613,7 @@ export default async function HomePage() {
             </a>
             <Link
               href="/book"
-              className="btn-primary bg-white text-primary-700 hover:bg-gray-100"
+              className="btn-primary bg-white text-primary-700 hover:bg-gray-100 text-lg px-8 py-4"
             >
               Book Now
             </Link>

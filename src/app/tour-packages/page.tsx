@@ -1,9 +1,6 @@
-export const metadata = {
-  title: "Tour Packages | Professional Chauffeur Service Sri Lanka",
-  description:
-    "Explore our carefully curated tour packages covering Colombo, Kandy, Ella, Sigiriya, Galle, and more. Customized Sri Lanka experiences.",
-};
+"use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import tourPackagesData from "@/data/tour-packages.json";
 
@@ -18,181 +15,17 @@ interface TourPackage {
   image?: string;
 }
 
-const tourPackages: TourPackage[] = [
-  {
-    id: 1,
-    name: "Colombo City Tour",
-    duration: "1 Day",
-    places: [
-      "Gangaramaya Temple",
-      "National Museum",
-      "Galle Face Green",
-      "Old Parliament",
-      "Lotus Tower",
-      "Pettah Market",
-    ],
-    highlights: [
-      "City sightseeing",
-      "Local cuisine experience",
-      "Shopping opportunity",
-    ],
-    recommendedVehicle: "Toyota Prius",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 2,
-    name: "Sigiriya & Dambulla",
-    duration: "2 Days",
-    places: [
-      "Sigiriya Rock Fortress",
-      "Dambulla Cave Temple",
-      "Minneriya National Park",
-      "Pidurangala Rock",
-      "Village Tour",
-    ],
-    highlights: [
-      "Ancient heritage sites",
-      "Wildlife safari",
-      "Local village experience",
-    ],
-    recommendedVehicle: "Toyota Corolla",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 3,
-    name: "Kandy & Nuwara Eliya",
-    duration: "3 Days",
-    places: [
-      "Kandy City",
-      "Temple of the Tooth",
-      "Peradeniya Gardens",
-      "Nuwara Eliya",
-      "Tea Plantations",
-      "Hakgala Gardens",
-    ],
-    highlights: [
-      "Cultural experiences",
-      "Scenic train ride",
-      "Tea factory tour",
-    ],
-    recommendedVehicle: "Toyota Corolla",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 4,
-    name: "Kandy – Ella – Nuwara Eliya",
-    duration: "4 Days",
-    places: [
-      "Kandy",
-      "Nuwara Eliya",
-      "Ella",
-      "Nine Arch Bridge",
-      "Little Adam's Peak",
-      "Tea Plantations",
-      "Hakgala Gardens",
-    ],
-    highlights: [
-      "Hill country adventure",
-      "Scenic viewpoints",
-      "Train journey experience",
-    ],
-    recommendedVehicle: "Toyota Corolla",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 5,
-    name: "Galle & Mirissa",
-    duration: "2 Days",
-    places: [
-      "Galle Fort",
-      "Dutch Church",
-      "Galle Lighthouse",
-      "Mirissa Beach",
-      "Whale Watching",
-      "Coconut Tree Hill",
-    ],
-    highlights: [
-      "Beach relaxation",
-      "Colonial heritage",
-      "Marine life exploration",
-    ],
-    recommendedVehicle: "Toyota Prius",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 6,
-    name: "7 Days Sri Lanka Tour",
-    duration: "7 Days",
-    places: [
-      "Day 1-2: Colombo City",
-      "Day 2-3: Sigiriya & Dambulla",
-      "Day 3-4: Kandy",
-      "Day 4-5: Nuwara Eliya",
-      "Day 5-6: Ella",
-      "Day 6-7: Galle & Departure",
-    ],
-    highlights: [
-      "Complete Sri Lanka experience",
-      "All major attractions",
-      "Flexible itinerary",
-    ],
-    recommendedVehicle: "Toyota Corolla",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 7,
-    name: "10 Days Sri Lanka Tour",
-    duration: "10 Days",
-    places: [
-      "Day 1-2: Colombo",
-      "Day 2-3: Anuradhapura",
-      "Day 3-4: Sigiriya",
-      "Day 4-5: Kandy",
-      "Day 5-6: Nuwara Eliya",
-      "Day 6-7: Ella",
-      "Day 7-8: Tissa",
-      "Day 8-9: Yala Safari",
-      "Day 9-10: Galle & Departure",
-    ],
-    highlights: [
-      "Comprehensive exploration",
-      "Off the beaten path",
-      "Safari experience",
-      "All heritage sites",
-    ],
-    recommendedVehicle: "Toyota Corolla",
-    price: "Contact for price",
-    image: "",
-  },
-  {
-    id: 8,
-    name: "Custom Tour",
-    duration: "Flexible",
-    places: ["Your choice of destinations", "Hidden gems", "Local favorites"],
-    highlights: [
-      "Tailored to your interests",
-      "Flexible schedule",
-      "Personalized experience",
-    ],
-    recommendedVehicle: "Your choice",
-    price: "Contact for price",
-    image: "",
-  },
-];
-
-// Merge tour packages with images from JSON
-const tourPackagesWithImages = tourPackagesData.tourPackages.map((pkg) => {
-  const pkgData = tourPackages.find((p) => p.id === pkg.id);
-  return { ...pkgData, image: pkg.image };
-});
-
 export default function TourPackagesPage() {
+  const [activeTab, setActiveTab] = useState<"oneDayDrops" | "tourPackages">(
+    "oneDayDrops",
+  );
+
+  const oneDayDrops: TourPackage[] = tourPackagesData.oneDayDrops;
+  const tourPackages: TourPackage[] = tourPackagesData.tourPackages;
+
+  const currentPackages =
+    activeTab === "oneDayDrops" ? oneDayDrops : tourPackages;
+
   return (
     <>
       {/* Page Header */}
@@ -205,20 +38,94 @@ export default function TourPackagesPage() {
         </div>
       </section>
 
-      {/* Featured Packages */}
+      {/* Tabs */}
+      <section className="py-8 bg-gray-50 border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center gap-4">
+            <button
+              onClick={() => setActiveTab("oneDayDrops")}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                activeTab === "oneDayDrops"
+                  ? "bg-primary-600 text-white shadow-lg"
+                  : "bg-white text-gray-700 hover:bg-gray-100 shadow"
+              }`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="inline-block mr-2"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              One Day Drops
+            </button>
+            <button
+              onClick={() => setActiveTab("tourPackages")}
+              className={`px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
+                activeTab === "tourPackages"
+                  ? "bg-primary-600 text-white shadow-lg"
+                  : "bg-white text-gray-700 hover:bg-gray-100 shadow"
+              }`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="inline-block mr-2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Tour Packages
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Packages Grid */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900">
+              {activeTab === "oneDayDrops"
+                ? "One Day Drop Services"
+                : "Multi-Day Tour Packages"}
+            </h2>
+            <p className="text-gray-600">
+              {activeTab === "oneDayDrops"
+                ? "Perfect for quick city explorations and day trips from your location"
+                : "Comprehensive tours covering multiple destinations and experiences"}
+            </p>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tourPackagesWithImages.map((pkg) => (
+            {currentPackages.map((pkg) => (
               <div key={pkg.id} className="card overflow-hidden">
                 <div className="relative h-48 w-full bg-gradient-to-br from-primary-100 to-primary-200">
-                  <Image
-                    src={pkg.image || ""}
-                    alt={pkg.name || "Tour Package"}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                  {pkg.image && (
+                    <Image
+                      src={pkg.image}
+                      alt={pkg.name || "Tour Package"}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                  )}
                 </div>
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
@@ -306,7 +213,9 @@ export default function TourPackagesPage() {
                       {pkg.price}
                     </p>
                     <a
-                      href="https://wa.me/94771234567?text=I%20am%20interested%20in%20the%20{pkg.name}"
+                      href={`https://wa.me/94779678677?text=I%20am%20interested%20in%20the%20${encodeURIComponent(
+                        pkg.name,
+                      )}`}
                       className="btn-whatsapp text-sm py-2 px-4"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -438,7 +347,7 @@ export default function TourPackagesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"

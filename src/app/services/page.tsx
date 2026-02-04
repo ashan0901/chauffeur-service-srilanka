@@ -4,222 +4,130 @@ export const metadata = {
     "Explore our comprehensive chauffeur services including airport transfers, tourist tours, hotel transfers, and private chauffeur services.",
 };
 
-const services = [
-  {
-    id: 1,
-    title: "Airport Pickup & Drop",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-      </svg>
-    ),
-    description:
-      "Reliable airport transfer services from Bandaranaike International Airport (BIA) and other airports in Sri Lanka.",
-    features: [
-      "Flight tracking for on-time pickup",
-      "Meet & greet service at arrival gate",
-      "Help with luggage",
-      "Flight delay handling",
-      "24/7 availability",
-    ],
-    locations: [
-      "Bandaranaike International Airport (CMB)",
-      "Mattala Rajapaksa International Airport (HRI",
-      "Colombo Airport Transfers",
-    ],
-  },
-  {
-    id: 2,
-    title: "Tourist Tours",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-        <path d="M2 12h20" />
-      </svg>
-    ),
-    description:
-      "Customized day trips and multi-day tours to Sri Lanka's most beautiful destinations and hidden gems.",
-    features: [
-      "Flexible itineraries",
-      "Expert local guidance",
-      "Comfortable stops at scenic locations",
-      "Restaurant recommendations",
-      "Photography opportunities",
-    ],
-    locations: [
-      "Sigiriya & Dambulla",
-      "Kandy & Nuwara Eliya",
-      "Galle & Mirissa",
-      "Colombo City Tour",
-      "Udawalawe Safari",
-    ],
-  },
-  {
-    id: 3,
-    title: "Hotel Transfers",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
-        <circle cx="7" cy="17" r="2" />
-        <path d="M9 17h6" />
-        <circle cx="17" cy="17" r="2" />
-      </svg>
-    ),
-    description:
-      "Comfortable transfers between hotels, resorts, and accommodation properties across Sri Lanka.",
-    features: [
-      "Door-to-door service",
-      "Assistance with luggage",
-      "Professional & punctual drivers",
-      "Clean & comfortable vehicles",
-      "Flexible pickup times",
-    ],
-    locations: [
-      "All Colombo Hotels",
-      "Hill Country Resorts",
-      "Beachfront Hotels",
-      "Cultural Triangle Accommodations",
-    ],
-  },
-  {
-    id: 4,
-    title: "Long-distance Travel",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <line x1="12" y1="1" x2="12" y2="23" />
-        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-      </svg>
-    ),
-    description:
-      "Safe and comfortable long-distance travel for your Sri Lanka adventures.",
-    features: [
-      "Experienced driver familiar with Sri Lankan roads",
-      "Comfortable breaks at scenic spots",
-      "Flexible scheduling",
-      "Competitive pricing",
-      "Door-to-door service",
-    ],
-    locations: [
-      "Colombo to Ella",
-      "Kandy to Sigiriya",
-      "Galle to Trincomalee",
-      "Any destination in Sri Lanka",
-    ],
-  },
-  {
-    id: 5,
-    title: "Private Chauffeur (Daily)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-        <circle cx="12" cy="7" r="4" />
-      </svg>
-    ),
-    description:
-      "Dedicated private chauffeur for your daily travel needs during your Sri Lanka vacation.",
-    features: [
-      "Personal driver throughout your trip",
-      "Flexible daily schedule",
-      "Local expertise & recommendations",
-      "Convenient hotel pickup & drop-off",
-      "English-speaking driver",
-    ],
-    locations: [
-      "Available island-wide",
-      "Perfect for extended stays",
-      "Customizable daily routes",
-    ],
-  },
-  {
-    id: 6,
-    title: "Private Chauffeur (Weekly)",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="40"
-        height="40"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-        <line x1="16" y1="2" x2="16" y2="6" />
-        <line x1="8" y1="2" x2="8" y2="6" />
-        <line x1="3" y1="10" x2="21" y2="10" />
-      </svg>
-    ),
-    description:
-      "Complete week-long chauffeur service for an immersive Sri Lanka experience.",
-    features: [
-      "Full-week dedicated driver",
-      "Customized weekly itinerary",
-      "Best local experiences included",
-      "Cost-effective package pricing",
-      "24/7 availability",
-    ],
-    locations: [
-      "7-day Sri Lanka explorer",
-      "10-day comprehensive tour",
-      "Custom weekly packages",
-    ],
-  },
-];
+import servicesData from "@/data/services.json";
+
+interface Service {
+  id: number;
+  title: string;
+  iconName: string;
+  description: string;
+  features: string[];
+  locations: string[];
+}
+
+interface ServiceArea {
+  name: string;
+  subtitle: string;
+}
+
+// Icon components map
+const icons: Record<string, JSX.Element> = {
+  airport: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  ),
+  tour: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+      <path d="M2 12h20" />
+    </svg>
+  ),
+  hotel: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+      <circle cx="7" cy="17" r="2" />
+      <path d="M9 17h6" />
+      <circle cx="17" cy="17" r="2" />
+    </svg>
+  ),
+  distance: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="12" y1="1" x2="12" y2="23" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+    </svg>
+  ),
+  person: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  ),
+  calendar: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="40"
+      height="40"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  ),
+};
 
 export default function ServicesPage() {
+  const services: Service[] = servicesData.services;
+  const serviceAreas: ServiceArea[] = servicesData.serviceAreas;
+
   return (
     <>
       {/* Page Header */}
@@ -240,7 +148,7 @@ export default function ServicesPage() {
             {services.map((service) => (
               <div key={service.id} className="card overflow-hidden">
                 <div className="bg-primary-600 p-6 text-white flex items-center justify-center">
-                  {service.icon}
+                  {icons[service.iconName] || icons.tour}
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-3">
@@ -306,168 +214,28 @@ export default function ServicesPage() {
           </div>
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
+              {serviceAreas.map((area, index) => (
+                <div key={index} className="p-4">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </div>
+                  <h3 className="font-medium">{area.name}</h3>
+                  <p className="text-sm text-gray-500">{area.subtitle}</p>
                 </div>
-                <h3 className="font-medium">Colombo Region</h3>
-                <p className="text-sm text-gray-500">Airport & City</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Cultural Triangle</h3>
-                <p className="text-sm text-gray-500">
-                  Anuradhapura, Polonnaruwa
-                </p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Hill Country</h3>
-                <p className="text-sm text-gray-500">Kandy, Nuwara Eliya</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Southern Coast</h3>
-                <p className="text-sm text-gray-500">Galle, Mirissa</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Eastern Coast</h3>
-                <p className="text-sm text-gray-500">Trincomalee, Arugam Bay</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Wildlife Parks</h3>
-                <p className="text-sm text-gray-500">Yala, Udawalawe</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Northern Region</h3>
-                <p className="text-sm text-gray-500">Jaffna</p>
-              </div>
-              <div className="p-4">
-                <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3 text-primary-600">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="font-medium">Anywhere Else</h3>
-                <p className="text-sm text-gray-500">Just ask!</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -484,7 +252,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"

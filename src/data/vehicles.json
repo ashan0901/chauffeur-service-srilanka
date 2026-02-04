@@ -1,0 +1,39 @@
+{
+  "vehicles": [
+    {
+      "id": 1,
+      "name": "Toyota Premio G Superior 2014",
+      "model": "Toyota",
+      "image": "/images/vehicle-1.jpg",
+      "capacity": "4 Passengers",
+      "ac": "Yes",
+      "luggage": "3 Suitcases",
+      "ideal": "Ideal for couples & small families",
+      "features": [
+        "Fuel Efficient",
+        "Smooth Ride",
+        "Low Noise",
+        "Super Comfort"
+      ],
+      "safety": "Full insurance coverage, regular maintenance, safety features including EBD, and airbags"
+    },
+    {
+      "id": 2,
+      "name": "Honda Vezel Z Grade 2015",
+      "model": "Honda Vezel 2015",
+      "image": "/images/vehicle-2.jpg",
+      "capacity": "4 Passengers",
+      "ac": "Yes",
+      "luggage": "3 Suitcases",
+      "ideal": "Perfect for small families & groups",
+      "features": [
+        "Petrol Engine",
+        "Spacious Interior",
+        "High Ground Clearance",
+        "Reliable"
+      ],
+      "safety": "Full insurance coverage, regular maintenance, safety features including ABS, EBD, airbags, and reverse camera"
+    }
+  ],
+  "featuredVehicles": [1, 2]
+}

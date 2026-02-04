@@ -1,0 +1,122 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "title": "Airport Pickup & Drop",
+      "iconName": "airport",
+      "description": "Reliable airport transfer services from Bandaranaike International Airport (BIA) and other airports in Sri Lanka.",
+      "features": [
+        "Flight tracking for on-time pickup",
+        "Meet & greet service at arrival gate",
+        "Help with luggage",
+        "Flight delay handling",
+        "24/7 availability"
+      ],
+      "locations": ["Bandaranaike International Airport (CMB)"]
+    },
+    {
+      "id": 2,
+      "title": "Tourist Tours",
+      "iconName": "tour",
+      "description": "Customized day trips and multi-day tours to Sri Lanka's most beautiful destinations and hidden gems.",
+      "features": [
+        "Flexible itineraries",
+        "Expert local guidance",
+        "Comfortable stops at scenic locations",
+        "Restaurant recommendations",
+        "Photography opportunities"
+      ],
+      "locations": [
+        "Sigiriya & Dambulla",
+        "Kandy & Nuwara Eliya",
+        "Galle & Mirissa",
+        "Colombo City Tour",
+        "Udawalawe Safari"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Hotel Transfers",
+      "iconName": "hotel",
+      "description": "Comfortable transfers between hotels, resorts, and accommodation properties across Sri Lanka.",
+      "features": [
+        "Door-to-door service",
+        "Assistance with luggage",
+        "Professional & punctual drivers",
+        "Clean & comfortable vehicles",
+        "Flexible pickup times"
+      ],
+      "locations": [
+        "All Colombo Hotels",
+        "Hill Country Resorts",
+        "Beachfront Hotels",
+        "Cultural Triangle Accommodations"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Long-distance Travel",
+      "iconName": "distance",
+      "description": "Safe and comfortable long-distance travel for your Sri Lanka adventures.",
+      "features": [
+        "Experienced driver familiar with Sri Lankan roads",
+        "Comfortable breaks at scenic spots",
+        "Flexible scheduling",
+        "Competitive pricing",
+        "Door-to-door service"
+      ],
+      "locations": [
+        "Colombo to Ella",
+        "Kandy to Sigiriya",
+        "Galle to Trincomalee",
+        "Any destination in Sri Lanka"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Private Chauffeur (Daily)",
+      "iconName": "person",
+      "description": "Dedicated private chauffeur for your daily travel needs during your Sri Lanka vacation.",
+      "features": [
+        "Personal driver throughout your trip",
+        "Flexible daily schedule",
+        "Local expertise & recommendations",
+        "Convenient hotel pickup & drop-off",
+        "English-speaking driver"
+      ],
+      "locations": [
+        "Available island-wide",
+        "Perfect for extended stays",
+        "Customizable daily routes"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Private Chauffeur (Weekly)",
+      "iconName": "calendar",
+      "description": "Complete week-long chauffeur service for an immersive Sri Lanka experience.",
+      "features": [
+        "Full-week dedicated driver",
+        "Customized weekly itinerary",
+        "Best local experiences included",
+        "Cost-effective package pricing",
+        "24/7 availability"
+      ],
+      "locations": [
+        "7-day Sri Lanka explorer",
+        "10-day comprehensive tour",
+        "Custom weekly packages"
+      ]
+    }
+  ],
+  "serviceAreas": [
+    { "name": "Colombo Region", "subtitle": "Airport & City" },
+    { "name": "Cultural Triangle", "subtitle": "Anuradhapura, Polonnaruwa" },
+    { "name": "Hill Country", "subtitle": "Kandy, Nuwara Eliya" },
+    { "name": "Southern Coast", "subtitle": "Galle, Mirissa" },
+    { "name": "Eastern Coast", "subtitle": "Trincomalee, Arugam Bay" },
+    { "name": "Wildlife Parks", "subtitle": "Yala, Udawalawe" },
+    { "name": "Northern Region", "subtitle": "Jaffna" },
+    { "name": "Anywhere Else", "subtitle": "Just ask!" }
+  ]
+}

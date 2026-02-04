@@ -1,35 +1,185 @@
 {
-  "tourPackages": [
+  "oneDayDrops": [
     {
       "id": 1,
+      "name": "Colombo City Tour",
+      "duration": "1 Day",
+      "places": [
+        "Gangaramaya Temple",
+        "National Museum",
+        "Galle Face Green",
+        "Old Parliament",
+        "Lotus Tower",
+        "Pettah Market"
+      ],
+      "highlights": [
+        "City sightseeing",
+        "Local cuisine experience",
+        "Shopping opportunity"
+      ],
+      "recommendedVehicle": "Toyota Premio",
+      "price": "Contact for price",
       "image": "/images/tour-colombo.jpg"
     },
     {
       "id": 2,
-      "image": "/images/tour-sigiriya.jpg"
+      "name": "Galle Drop Tour",
+      "duration": "1 Day",
+      "places": [
+        "Galle Fort",
+        "Dutch Church",
+        "Galle Lighthouse",
+        "Dutch Hospital",
+        "Galle Maritime Museum"
+      ],
+      "highlights": [
+        "Colonial heritage",
+        "Historic architecture",
+        "Ocean views"
+      ],
+      "recommendedVehicle": "Toyota Prius",
+      "price": "Contact for price",
+      "image": "/images/tour-galle.jpg"
     },
     {
       "id": 3,
+      "name": "Kandy Drop Tour",
+      "duration": "1 Day",
+      "places": [
+        "Temple of the Tooth",
+        "Kandy Lake",
+        "Peradeniya Gardens",
+        "Kandy City Centre"
+      ],
+      "highlights": [
+        "Cultural experiences",
+        "Sacred sites",
+        "Botanical gardens"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
       "image": "/images/tour-kandy.jpg"
     },
     {
       "id": 4,
+      "name": "Sigiriya Drop Tour",
+      "duration": "1 Day",
+      "places": ["Sigiriya Rock Fortress", "Dambulla Cave Temple"],
+      "highlights": [
+        "Ancient heritage",
+        "UNESCO World Heritage",
+        "Amazing views"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
+      "image": "/images/tour-sigiriya.jpg"
+    }
+  ],
+  "tourPackages": [
+    {
+      "id": 5,
+      "name": "Kandy, Ella & Nuwara Eliya",
+      "duration": "4 Days",
+      "places": [
+        "Kandy",
+        "Nuwara Eliya",
+        "Ella",
+        "Nine Arch Bridge",
+        "Little Adam's Peak",
+        "Tea Plantations",
+        "Hakgala Gardens"
+      ],
+      "highlights": [
+        "Hill country adventure",
+        "Scenic viewpoints",
+        "Train journey experience"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
       "image": "/images/tour-ella.jpg"
     },
     {
-      "id": 5,
-      "image": "/images/tour-galle.jpg"
-    },
-    {
       "id": 6,
+      "name": "Sigiriya, Kandy & Nuwara Eliya",
+      "duration": "5 Days",
+      "places": [
+        "Sigiriya Rock Fortress",
+        "Dambulla Cave Temple",
+        "Kandy",
+        "Nuwara Eliya",
+        "Tea Plantations"
+      ],
+      "highlights": [
+        "Heritage sites",
+        "Cultural experiences",
+        "Hill country scenery"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
       "image": "/images/tour-7days.jpg"
     },
     {
       "id": 7,
-      "image": "/images/tour-10days.jpg"
+      "name": "7 Days Sri Lanka Tour",
+      "duration": "7 Days",
+      "places": [
+        "Day 1-2: Colombo City",
+        "Day 2-3: Sigiriya & Dambulla",
+        "Day 3-4: Kandy",
+        "Day 4-5: Nuwara Eliya",
+        "Day 5-6: Ella",
+        "Day 6-7: Galle & Departure"
+      ],
+      "highlights": [
+        "Complete Sri Lanka experience",
+        "All major attractions",
+        "Flexible itinerary"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
+      "image": "/images/tour-7days.jpg"
     },
     {
       "id": 8,
+      "name": "10 Days Sri Lanka Tour",
+      "duration": "10 Days",
+      "places": [
+        "Day 1-2: Colombo",
+        "Day 2-3: Anuradhapura",
+        "Day 3-4: Sigiriya",
+        "Day 4-5: Kandy",
+        "Day 5-6: Nuwara Eliya",
+        "Day 6-7: Ella",
+        "Day 7-8: Tissa",
+        "Day 8-9: Yala Safari",
+        "Day 9-10: Galle & Departure"
+      ],
+      "highlights": [
+        "Comprehensive exploration",
+        "Off the beaten path",
+        "Safari experience",
+        "All heritage sites"
+      ],
+      "recommendedVehicle": "Toyota Corolla",
+      "price": "Contact for price",
+      "image": "/images/tour-10days.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Custom Tour",
+      "duration": "Flexible",
+      "places": [
+        "Your choice of destinations",
+        "Hidden gems",
+        "Local favorites"
+      ],
+      "highlights": [
+        "Tailored to your interests",
+        "Flexible schedule",
+        "Personalized experience"
+      ],
+      "recommendedVehicle": "Your choice",
+      "price": "Contact for price",
       "image": "/images/tour-custom.jpg"
     }
   ]

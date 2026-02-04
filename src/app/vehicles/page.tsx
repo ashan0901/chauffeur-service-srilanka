@@ -5,42 +5,24 @@ export const metadata = {
 };
 
 import Image from "next/image";
+import vehiclesData from "@/data/vehicles.json";
 
-const vehicles = [
-  {
-    id: 1,
-    name: "Toyota Premio G - Superior 2014",
-    model: "Toyota",
-    image: "/images/vehicle-1.jpg",
-    capacity: "4 Passengers",
-    ac: "Yes (Dual Zone)",
-    luggage: "2 Large Suitcases + 2 Small Bags",
-    features: ["Fuel Efficient", "Smooth Ride", "Low Noise", "Super Comfort"],
-    ideal: "Ideal for couples & small families",
-    safety:
-      "Full insurance coverage, regular maintenance, safety features including EBD, and airbags",
-  },
-  {
-    id: 2,
-    name: "Honda Vezel - Hybrid SUV 2015",
-    model: "Honda Vezel 2015",
-    image: "/images/vehicle-2.jpg",
-    capacity: "4 Passengers",
-    ac: "Yes (Dual Zone)",
-    luggage: "3 Large Suitcases + 2 Small Bags",
-    features: [
-      "Petrol Engine",
-      "Spacious Interior",
-      "High Ground Clearance",
-      "Reliable",
-    ],
-    ideal: "Perfect for small families & groups",
-    safety:
-      "Full insurance coverage, regular maintenance, safety features including ABS, EBD, airbags, and reverse camera",
-  },
-];
+interface Vehicle {
+  id: number;
+  name: string;
+  model: string;
+  image: string;
+  capacity: string;
+  ac: string;
+  luggage: string;
+  ideal: string;
+  features: string[];
+  safety: string;
+}
 
 export default function VehiclesPage() {
+  const vehicles: Vehicle[] = vehiclesData.vehicles;
+
   return (
     <>
       {/* Page Header */}
@@ -100,9 +82,11 @@ export default function VehiclesPage() {
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                           </svg>
-                          <span className="font-medium">Capacity</span>
+                          <span className="text-sm text-gray-500">
+                            Capacity
+                          </span>
                         </div>
-                        <p className="text-gray-600">{vehicle.capacity}</p>
+                        <p className="font-semibold">{vehicle.capacity}</p>
                       </div>
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <div className="flex items-center gap-2 mb-1">
@@ -120,9 +104,9 @@ export default function VehiclesPage() {
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                             <path d="M22 6l-10 7L2 6" />
                           </svg>
-                          <span className="font-medium">Air Conditioning</span>
+                          <span className="text-sm text-gray-500">AC</span>
                         </div>
-                        <p className="text-gray-600">{vehicle.ac}</p>
+                        <p className="font-semibold">{vehicle.ac}</p>
                       </div>
                       <div className="bg-gray-50 p-4 rounded-lg col-span-2">
                         <div className="flex items-center gap-2 mb-1">
@@ -141,14 +125,18 @@ export default function VehiclesPage() {
                             <line x1="3" y1="6" x2="21" y2="6" />
                             <path d="M16 10a4 4 0 0 1-8 0" />
                           </svg>
-                          <span className="font-medium">Luggage Capacity</span>
+                          <span className="text-sm text-gray-500">
+                            Luggage Capacity
+                          </span>
                         </div>
-                        <p className="text-gray-600">{vehicle.luggage}</p>
+                        <p className="font-semibold">{vehicle.luggage}</p>
                       </div>
                     </div>
 
                     <div className="mb-6">
-                      <h3 className="font-medium mb-2">Vehicle Features</h3>
+                      <h4 className="font-semibold text-gray-900 mb-2">
+                        Vehicle Features:
+                      </h4>
                       <div className="flex flex-wrap gap-2">
                         {vehicle.features.map((feature, i) => (
                           <span
@@ -161,33 +149,40 @@ export default function VehiclesPage() {
                       </div>
                     </div>
 
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <div className="flex items-start gap-2">
+                    <div className="bg-gray-50 p-4 rounded-lg mb-6">
+                      <div className="flex items-center gap-2 mb-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="18"
                           height="18"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="green"
+                          stroke="currentColor"
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="mt-0.5"
+                          className="text-green-600"
                         >
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                           <path d="M9 12l2 2 4-4" />
                         </svg>
-                        <div>
-                          <p className="font-medium text-green-700">
-                            Safety & Insurance
-                          </p>
-                          <p className="text-sm text-green-600">
-                            {vehicle.safety}
-                          </p>
-                        </div>
+                        <span className="font-semibold text-gray-900">
+                          Safety & Maintenance
+                        </span>
                       </div>
+                      <p className="text-sm text-gray-600">{vehicle.safety}</p>
                     </div>
+
+                    <a
+                      href={`https://wa.me/94779678677?text=I%20am%20interested%20in%20${encodeURIComponent(
+                        vehicle.name,
+                      )}`}
+                      className="btn-whatsapp w-full justify-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Book This Vehicle
+                    </a>
                   </div>
                 </div>
               </div>
@@ -196,19 +191,103 @@ export default function VehiclesPage() {
         </div>
       </section>
 
-      {/* Booking CTA */}
+      {/* Why Choose Our Vehicles Section */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Why Choose Our Vehicles</h2>
+            <p className="section-subtitle">
+              We maintain the highest standards for your safety and comfort
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="card p-8 text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Fully Insured</h3>
+              <p className="text-gray-600">
+                All our vehicles are fully insured with comprehensive coverage
+                for your peace of mind
+              </p>
+            </div>
+            <div className="card p-8 text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">
+                Regular Maintenance
+              </h3>
+              <p className="text-gray-600">
+                Every vehicle undergoes regular servicing and safety checks to
+                ensure optimal performance
+              </p>
+            </div>
+            <div className="card p-8 text-center">
+              <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4 text-primary-600">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Modern Fleet</h3>
+              <p className="text-gray-600">
+                Our vehicles are modern, well-maintained, and equipped with the
+                latest features
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 bg-primary-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Ready to Book Your Vehicle?
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Ready to Explore Sri Lanka?
           </h2>
-          <p className="text-gray-600 mb-8">
-            Contact us now to check availability and get a quote for your Sri
-            Lanka journey
+          <p className="text-xl text-gray-200 mb-8">
+            Contact us today to book your vehicle and plan your perfect Sri
+            Lanka adventure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"
@@ -224,8 +303,11 @@ export default function VehiclesPage() {
               </svg>
               Chat on WhatsApp
             </a>
-            <a href="/contact" className="btn-primary">
-              Book Now
+            <a
+              href="/contact"
+              className="btn-primary bg-white text-primary-700 hover:bg-gray-100"
+            >
+              Contact Us
             </a>
           </div>
         </div>

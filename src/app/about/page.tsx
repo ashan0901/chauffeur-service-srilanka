@@ -48,7 +48,7 @@ export default function AboutPage() {
               </div>
               {/* Experience Badge */}
               <div className="absolute -bottom-6 -right-6 bg-gold-500 text-white p-6 rounded-xl shadow-lg">
-                <p className="text-3xl font-bold">15+</p>
+                <p className="text-3xl font-bold">12+</p>
                 <p className="text-sm">Years Experience</p>
               </div>
             </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
             {/* Driver Info */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-2">
-                Your Chauffeur: Mr. Chaminda Perera
+                Your Chauffeur: Mr. Tiran Fernando
               </h2>
               <p className="text-primary-600 font-medium mb-6">
                 Licensed Professional Driver • English Speaking
@@ -107,7 +107,7 @@ export default function AboutPage() {
                   <div>
                     <p className="font-medium">Tourist Transport Experience</p>
                     <p className="text-sm text-gray-600">
-                      10+ years serving international tourists
+                      12+ years serving international tourists
                     </p>
                   </div>
                 </div>
@@ -129,9 +129,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <p className="font-medium">English Speaking</p>
-                    <p className="text-sm text-gray-600">
-                      Fluent in English, Basic Japanese & German
-                    </p>
+                    <p className="text-sm text-gray-600">Fluent in English</p>
                   </div>
                 </div>
               </div>
@@ -139,8 +137,8 @@ export default function AboutPage() {
               <div className="bg-gray-50 p-6 rounded-xl">
                 <h3 className="font-semibold text-lg mb-3">My Story</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  "Welcome to Sri Lanka! I'm Chaminda, and I've been providing
-                  professional chauffeur services for over 15 years. My passion
+                  "Welcome to Sri Lanka! I'm Tiran, and I've been providing
+                  professional chauffeur services for over 12 years. My passion
                   is helping tourists discover the hidden gems and famous
                   attractions of our beautiful island nation. From the ancient
                   wonders of Sigiriya to the scenic tea plantations of Nuwara
@@ -161,13 +159,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="text-center">
               <p className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                500+
+                100+
               </p>
               <p className="text-gray-600">Happy Clients</p>
             </div>
             <div className="text-center">
               <p className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                1000+
+                500+
               </p>
               <p className="text-gray-600">Tours Completed</p>
             </div>
@@ -281,7 +279,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/94771234567"
+              href="https://wa.me/94779678677"
               className="btn-whatsapp text-lg justify-center"
               target="_blank"
               rel="noopener noreferrer"
